@@ -1,0 +1,4 @@
+Input,Expected
+1.1, NaN
+-1.5, NaN
+20, NaN
