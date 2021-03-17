@@ -1,3 +1,5 @@
+package stage2;
+
 public class Node {
     private int n;
     private int key[];

@@ -1,3 +1,5 @@
+package stage1;
+
 public class MathFunction {
     public double arctgInTow(double x){
         if(Math.abs(x) > 1) return Double.NaN;

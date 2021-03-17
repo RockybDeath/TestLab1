@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.*;
+import stage2.Btree;
+import stage2.Node;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BtreeTest {
@@ -74,7 +76,7 @@ public class BtreeTest {
         Assertions.assertTrue(compareBtree(btree, btree1));
     }
     @Test
-    public void testremove(){
+    public void testRemove(){
         btree.insert(2);
         btree.insert(1);
         btree.insert(3);
@@ -106,7 +108,7 @@ public class BtreeTest {
         Assertions.assertTrue(compareBtree(btree, btree1));
     }
     @Test
-    public void testremove1(){
+    public void testRemove1(){
         btree.insert(2);
         btree.insert(1);
         btree.insert(3);

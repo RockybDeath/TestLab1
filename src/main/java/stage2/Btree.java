@@ -1,3 +1,5 @@
+package stage2;
+
 public class Btree {
     private int T;
     private Node root = null;
