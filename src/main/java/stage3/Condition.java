@@ -1,4 +1,5 @@
 package stage3;
 
-public class Condition {
+public interface Condition {
+    boolean checkCondition();
 }

@@ -7,6 +7,11 @@ public class Node {
         this.key = new int[2 * t - 1];
         this.child = new Node[2*t];
     }
+
+    public void setKey(int[] key) {
+        this.key = key;
+    }
+
     public int Find(int k) {
         for (int i = 0; i < this.n; i++) {
             if (this.key[i] == k) {
@@ -30,19 +35,11 @@ public class Node {
     public boolean getLeaf(){
         return this.leaf;
     }
-
     public void setLeaf(boolean leaf) {
         this.leaf = leaf;
     }
-
-    public void setKey(int[] key) {
-        this.key = key;
-    }
     public void setKeyOnIndex(int index, int value){
         this.key[index] = value;
-    }
-    public void setChild(Node[] child) {
-        this.child = child;
     }
     public void setChildOnIndex(int index, Node node){
         this.child[index] = node;
