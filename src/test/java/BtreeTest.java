@@ -52,7 +52,6 @@ public class BtreeTest {
         btree.insert(2);
         btree.insert(2);
         btree.insert(1);
-        btree.show();
         Btree btree1 = new Btree(2);
         btree1.getRoot().setKey(new int[]{2,2,4});
         btree1.getRoot().setLeaf(false);
@@ -142,6 +141,45 @@ public class BtreeTest {
         nodes[2].setKey(new int[]{4,5});
         nodes[2].setN(2);
         nodes[2].setLeaf(true);
+        Assertions.assertTrue(compareBtree(btree, btree1));
+    }
+    @Test
+    public void testRemove2(){
+        btree.insert(1);
+        btree.insert(2);
+        btree.insert(3);
+        btree.insert(4);
+        btree.insert(5);
+        btree.insert(6);
+        btree.insert(7);
+        btree.insert(8);
+        btree.insert(9);
+        btree.insert(10);
+        btree.remove(2);
+        Btree btree1 = new Btree(2);
+        btree1.getRoot().setKey(new int[]{6,0,0});
+        btree1.getRoot().setLeaf(false);
+        Node[] nodes = btree1.getRoot().getChild();
+        nodes[0] = new Node(2);
+        nodes[0].setKey(new int[]{4});
+        nodes[0].setLeaf(true);
+        nodes[1] = new Node(2);
+        nodes[1].setKey(new int[]{8});
+        nodes[1].setLeaf(true);
+        Node[] subNodes1 = nodes[0].getChild();
+        Node[] subNodes2 = nodes[1].getChild();
+        subNodes1[0] = new Node(2);
+        subNodes1[0].setKey(new int[]{1,3});
+        subNodes1[0].setLeaf(true);
+        subNodes1[1] = new Node(2);
+        subNodes1[1].setKey(new int[]{5});
+        subNodes1[1].setLeaf(true);
+        subNodes2[0] = new Node(2);
+        subNodes2[0].setKey(new int[]{7});
+        subNodes2[0].setLeaf(true);
+        subNodes2[1] = new Node(2);
+        subNodes2[1].setKey(new int[]{9,10});
+        subNodes2[1].setLeaf(true);
         Assertions.assertTrue(compareBtree(btree, btree1));
     }
 }
